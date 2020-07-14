@@ -4,7 +4,7 @@
 
 void foo()
 {
-	printf("Hi\n");
+	printf("Goodbye\n");
 }
 
-int bar = 4;
+int bar = 42;
