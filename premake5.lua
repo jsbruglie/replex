@@ -5,13 +5,13 @@ workspace "RePlex"
   targetdir "bin/%{cfg.buildcfg}"
 
   -- Get that C++14 goodness
-  flags { "C++14" }
+  cppdialect "C++14"
 
   filter "configurations:Debug"
     -- Add the preprocessor definition DEBUG to debug builds
     defines { "DEBUG" }
     -- Ensure symbols are bundled with debug builds
-    flags { "Symbols" }
+    symbols "On"
 
   filter "configurations:Release"
     -- Add the preprocessor definition RELEASE to debug builds
