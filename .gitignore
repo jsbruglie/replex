@@ -1,3 +1,7 @@
+# Build
+bin/
+obj/
+
 # premake auto-generated make files 
 *.make
 Makefile
