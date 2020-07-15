@@ -39,3 +39,9 @@ workspace "RePlex"
     kind "StaticLib"
     files { "googletest/googletest/src/gtest-all.cc" }
     includedirs { "googletest/googletest/include", "googletest/googletest" }
+
+  project "TestRePlexFoo"
+    kind "ConsoleApp"
+    files { "test/**.h", "test/**.cpp" }
+    includedirs { "lib/include", "foo/include", "googletest/googletest/include" }
+    links { "GoogleTest", "pthread" }
