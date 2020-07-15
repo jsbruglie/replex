@@ -31,6 +31,8 @@ public:
     static void LoadLibrary() { GetInstance().Load(); }
     /// Reloads library
     static void ReloadLibrary() { GetInstance().Reload(); }
+    /// Unloads library
+    static void UnloadLibrary() { GetInstance().Unload(); }
 
     /// Returns instance by reference
     static E& GetInstance()

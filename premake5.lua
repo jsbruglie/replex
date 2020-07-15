@@ -44,4 +44,4 @@ workspace "RePlex"
     kind "ConsoleApp"
     files { "test/**.h", "test/**.cpp" }
     includedirs { "lib/include", "foo/include", "googletest/googletest/include" }
-    links { "GoogleTest", "pthread" }
+    links { "GoogleTest", "pthread", "dl" }
