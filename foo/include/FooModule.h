@@ -18,11 +18,11 @@ std::array<std::pair<const char*, void*>, 2> g_exports = {
 };
 
 /// @brief Concrete library which can be hot reloaded
-class TestModule : public RePlexModule<TestModule, g_exports.size()>
+class FooModule : public RePlexModule<FooModule, g_exports.size()>
 {
 public:
 
-    TestModule() : RePlexModule(g_exports) {}
+    FooModule() : RePlexModule(g_exports) {}
 
     static int Foo(int input)
     {
@@ -41,9 +41,9 @@ protected:
     virtual const char* GetPath() const override
     {
 #ifdef DEBUG
-        return "bin/Debug/libRePlexTest.so";
+        return "bin/Debug/libRePlexFoo.so";
 #else
-        return "bin/Release/libRePlexTest.so";
+        return "bin/Release/libRePlexFoo.so";
 #endif
     }
 };

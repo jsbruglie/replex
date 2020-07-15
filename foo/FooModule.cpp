@@ -1,4 +1,4 @@
-#include "pub/Test.h"
+#include "include/FooModule.h"
 
 int foo(int x)
 {

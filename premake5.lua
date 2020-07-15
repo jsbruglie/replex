@@ -24,12 +24,18 @@ workspace "RePlex"
     kind "ConsoleApp"
     -- recursively glob .h and .cpp files in the runtime directory
     files { "runtime/**.h", "runtime/**.cpp" }
-    includedirs { "lib/pub", "test/pub" }
+    includedirs { "lib/include", "foo/include" }
     links { "dl" }
 
   -- RePlex test library
-  project "RePlexTest"
+  project "RePlexFoo"
     kind "SharedLib"
-    files { "test/**.h", "test/**.cpp", "test/pub/*.h" }
-    includedirs { "lib/pub" }
+    files { "foo/**.h", "foo/**.cpp", "foo/include/*.h" }
+    includedirs { "lib/include" }
     links { "dl" }
+
+  -- Google Test
+  project "GoogleTest"
+    kind "StaticLib"
+    files { "googletest/googletest/src/gtest-all.cc" }
+    includedirs { "googletest/googletest/include", "googletest/googletest" }
