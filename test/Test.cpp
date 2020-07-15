@@ -1,10 +1,8 @@
 #include "pub/Test.h"
 
-#include <cstdio>
-
-void foo()
+int foo(int x)
 {
-	printf("Goodbye\n");
+	return x + 5;
 }
 
 int bar = 42;

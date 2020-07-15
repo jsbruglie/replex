@@ -19,23 +19,17 @@ workspace "RePlex"
     -- Turn on compiler optimizations for release builds
     optimize "On"
 
-  -- RePlex Library
-  project "RePlex"
-    kind "SharedLib"
-    -- recursively glob .h and .cpp files in the lib directory
-    files { "lib/**.h", "lib/**.cpp" }
-    links { "dl" }
-
   -- RePlex Runtime
   project "RePlexRuntime"
     kind "ConsoleApp"
     -- recursively glob .h and .cpp files in the runtime directory
     files { "runtime/**.h", "runtime/**.cpp" }
-    -- link the RePlexLib library at runtime
-    links { "RePlex"}
-    includedirs { "lib/pub" }
+    includedirs { "lib/pub", "test/pub" }
+    links { "dl" }
 
   -- RePlex test library
   project "RePlexTest"
     kind "SharedLib"
     files { "test/**.h", "test/**.cpp", "test/pub/*.h" }
+    includedirs { "lib/pub" }
+    links { "dl" }
